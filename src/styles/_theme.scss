@@ -1,0 +1,66 @@
+@use "./settings" as *;
+
+$bg: "bg";
+$bg-header: "bgHeader";
+$card-bg: "card-bg";
+$text: "text";
+$text-secondary: "text-secondary";
+$link: "link";
+$hover: "hover";
+$logo: "logo";
+$brand-blue: "brand-blue";
+$brand-red: "brand-red";
+$border: "border";
+$stroke: "stroke";
+$fill: "fill";
+$scroll-thumb: "scrollThumb";
+$themeIconStarsRotate: "themeIconStarsRotate";
+$themeIconLightsRotate: "themeIconLightsRotate";
+
+$themes: (
+  default: (
+    bg: $light-theme-bg-color,
+    text: $light-theme-text-color,
+    link: $light-theme-text-color,
+    stroke: $light-theme-text-color,
+    fill: $light-theme-text-color,
+    bgHeader: $light-theme-bg-color--header,
+    scrollThumb: $light-theme-scroll-thumb,
+    themeIconStarsRotate: $one-eighty-rotate-deg,
+    themeIconLightsRotate: $zero-rotate-deg
+  ),
+  dark: (
+    bg: $dark-theme-bg-color,
+    text: $dark-theme-text-color,
+    link: $dark-theme-text-color,
+    stroke: $dark-theme-text-color,
+    fill: $dark-theme-text-color,
+    bgHeader: $dark-theme-bg-color--header,
+    scrollThumb: $dark-theme-scroll-thumb,
+    themeIconStarsRotate: $zero-rotate-deg,
+    themeIconLightsRotate: $one-eighty-rotate-deg
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
