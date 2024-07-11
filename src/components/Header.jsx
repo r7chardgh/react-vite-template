@@ -1,4 +1,6 @@
 import React from "react";
+
+import theme from "../helpers/theme";
 import btn from "../helpers/btn";
 import { sections } from "../section.json";
 function Header({ currentPos }) {

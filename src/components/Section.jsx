@@ -1,11 +1,11 @@
-import React from "react";
-
+import Test from "../pages/Test";
 
 function Section({ index, ...props }) {
-
   const renderSwitch = (id) => {
     switch (id) {
-      
+      case 1:
+        return <Test />;
+
       default:
         return (
           <div>

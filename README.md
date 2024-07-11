@@ -1,27 +1,16 @@
-#   My Personal Web
+#   react vite template
 
-## live site
-https://richardtsang.pages.dev/
+## libraries
 
-##  directory
--homepage
---intro
---about me
---skills
---works
---contact
-
-===
-- 👋 Hi, I’m @r7chardgh
-- 👀 I’m interested in web development, animation, ui/ux
-- 🌱 I’m currently learning ReactJS, NextJS and more
-- 💞️ I’m looking to collaborate on web project
-- 📫 Contact me via email: richardtcfung@gmail.com
-
-===
-##   Meta
 Materials for this project
 1. vite
 2. sass(scss)
 3. react
 4. react-router-dom
+
+## Create Pages
+
+1. create jsx file on directory /pages
+2. import page to /components/Section.jsx
+3. add object to section.json
+4. done

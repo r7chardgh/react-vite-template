@@ -1,4 +1,4 @@
-import React from "react";
+
 import time from "../helpers/time";
 function Footer() {
   return (

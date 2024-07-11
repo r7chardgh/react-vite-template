@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useOutletContext } from "react-router-dom";
 import { sections } from "../section.json";
 import Section from "../components/Section";
